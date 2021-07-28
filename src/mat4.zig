@@ -93,7 +93,7 @@ pub fn Mat4x4(comptime T: type) type {
         /// Make a translation between the given matrix and the given axis.
         pub fn translate(mat: Self, axis: Vector3(T)) Self {
             const trans_mat = Self.fromTranslate(axis);
-            return Self.mult(trans_mat, mat);
+            return Self.mult(mat, trans_mat);
         }
 
         /// Get translation Vec3 from current matrix.
@@ -192,7 +192,7 @@ pub fn Mat4x4(comptime T: type) type {
 
         pub fn scale(mat: Self, axis: Vector3(T)) Self {
             const scale_mat = Self.fromScale(axis);
-            return Self.mult(scale_mat, mat);
+            return Self.mult(mat, scale_mat);
         }
 
         pub fn extractScale(mat: Self) Vector3(T) {
