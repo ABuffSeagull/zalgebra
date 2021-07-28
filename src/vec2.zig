@@ -14,8 +14,8 @@ pub fn Vector2(comptime T: type) type {
     }
 
     return struct {
-        x: T,
-        y: T,
+        x: T = 0,
+        y: T = 0,
 
         const Self = @This();
 

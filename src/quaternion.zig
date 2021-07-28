@@ -17,10 +17,10 @@ pub fn Quaternion(comptime T: type) type {
     }
 
     return struct {
-        w: T,
-        x: T,
-        y: T,
-        z: T,
+        w: T = 0,
+        x: T = 0,
+        y: T = 0,
+        z: T = 0,
 
         const Self = @This();
 
